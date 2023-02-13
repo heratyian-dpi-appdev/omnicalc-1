@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   get("payment/new", { controller: "application", action: "blank_payment_form" })
   get("payment/results", { controller: "application", action: "payment_results" })
 
+  get("random/new", { controller: "application", action: "blank_random_form" })
+  get("random/results", { controller: "application", action: "random_results" })
+
   root({ controller: "application", action: "blank_square_form" })
 end

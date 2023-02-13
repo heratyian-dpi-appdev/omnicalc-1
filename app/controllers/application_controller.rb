@@ -36,4 +36,15 @@ class ApplicationController < ActionController::Base
 
     render({ template: "calculation_templates/payment_results" })
   end
+
+  def blank_random_form
+    render({ template: "calculation_templates/random_form" })
+  end
+
+  def random_results
+    @min = params.fetch("min").to_f
+    @max = params.fetch("max").to_f
+    @random = Random.new.rand(@min..@max)
+    render({ template: "calculation_templates/random_results" })
+  end
 end
