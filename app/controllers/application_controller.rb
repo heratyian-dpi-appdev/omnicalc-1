@@ -30,9 +30,9 @@ class ApplicationController < ActionController::Base
 
     n = @years * 12
     r = @apr / 100 / 12
-    @numerator = r * @principal
-    @denominator = 1 - (1 + r) ** -n
-    @payment = @numerator / @denominator
+    numerator = r * @principal
+    denominator = 1 - (1 + r) ** -n
+    @payment = numerator / denominator
 
     render({ template: "calculation_templates/payment_results" })
   end
